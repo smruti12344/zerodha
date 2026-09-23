@@ -38,4 +38,10 @@ zerodha/
 └── README.md
 ```
 
+## Live Preview
+
+View the live website here:
+
+[Open Zerodha Landing Page](https://smruti12344.github.io/zerodha/)
+
 > This project is created for learning and practice purposes. It is not an official Zerodha website.
