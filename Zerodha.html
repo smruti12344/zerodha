@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Zerodha: Online brokerage platform for stock trading & investing
+    </title>
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #e5e5e529;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow:
+          0 2px 4px rgba(0, 0, 0, 0.06),
+          0 6px 14px rgba(0, 0, 0, 0.08);
+        position: relative;
+        z-index: 10;
+      }
+
+      nav {
+        width: 100%;
+      }
+      .nav-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        height: 50px;
+        /* margin-top: 10px; */
+        align-items: center;
+      }
+      .logo img {
+        max-height: 17px;
+        vertical-align: middle;
+        position: relative;
+        /* top: 12px; */
+      }
+      img {
+        max-width: 100%;
+      }
+
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        margin-left: 30px;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+        font-size: 14px;
+        color: gray;
+      }
+
+      nav ul li a {
+        color: #777272;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      nav ul li a:hover {
+        color: #2563eb;
+        cursor: pointer;
+      }
+
+     main {
+  padding: 60px 8%;
+  color: #424242;
+}
+
+.hero,
+.content-section,
+.price-section {
+  max-width: 1100px;
+  margin: 0 auto 90px;
+  text-align: center;
+}
+
+.hero img {
+  width: min(100%, 800px);
+  margin-bottom: 35px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: 2rem;
+}
+
+p {
+  color: #666;
+  font-size: 17px;
+}
+
+.signup-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  border-radius: 4px;
+  background-color: #387ed1;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.signup-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.feature-card,
+.price-card {
+  padding: 25px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #387ed1;
+}
+
+.price-card strong {
+  display: block;
+  margin: 15px 0;
+  color: #387ed1;
+  font-size: 2rem;
+}
+
+@media (max-width: 700px) {
+  .nav-container {
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  nav ul li {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+  max-width: 1100px;
+  margin: 0 auto 90px;
+  padding: 50px 0;
+}
+
+.trust-content {
+  text-align: left;
+}
+
+.trust-content h2 {
+  margin-bottom: 18px;
+  color: #222;
+  font-size: 2.2rem;
+}
+
+.trust-content p {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.trust-image {
+  text-align: center;
+}
+
+.trust-image img {
+  width: 100%;
+  max-width: 500px;
+  animation: floatingImage 3s ease-in-out infinite;
+}
+
+@keyframes floatingImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 700px) {
+  .trust-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .trust-content {
+    text-align: center;
+  }
+}
+   footer {
+  padding: 50px 8% 25px;
+  border-top: 1px solid #eeeeee;
+  background-color: #fbfbfb;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand img {
+  width: 130px;
+  margin-bottom: 18px;
+}
+
+.footer-brand p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column h3 {
+  margin-bottom: 8px;
+  color: #424242;
+  font-size: 16px;
+}
+
+.footer-column a {
+  color: #777;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #387ed1;
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <!-- logo -->
+          <div class="logo">
+            <a href="#"
+              ><img
+                src="	https://zerodha.com/static/images/logo.svg"
+                alt="Zerodha Logo"
+            /></a>
+          </div>
+          <!-- navigation links  -->
+          <ul>
+            <li><a href="#">SignUp</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+  <!-- Zerodha chart image section -->
+  <section class="hero">
+    <img
+      src="https://zerodha.com/static/images/landing.png"
+      alt="Zerodha trading platform"
+    />
+    <h1>Invest in everything</h1>
+    <p>
+      Online platform to invest in stocks, derivatives, mutual funds, ETFs,
+      bonds, and more.
+    </p>
+    <a class="signup-button" href="#">Sign up for free</a>
+  </section>
+   <section class="trust-section">
+  <div class="trust-content">
+    <h2>Trust with confidence</h2>
+    <p>
+      Invest with powerful tools, transparent pricing, and a secure platform
+      designed to help you make confident financial decisions.
+    </p>
+    <a class="signup-button" href="#">Explore our platform</a>
+  </div>
+
+  <div class="trust-image">
+    <img
+      src="./ecosystem.png"
+      alt="Zerodha investment platform"
+    />
+  </div>
+</section>
+  <!-- Section 2: description and signup button -->
+  <section class="content-section">
+    <h2>Trade and invest with confidence</h2>
+    <p>
+      Simple pricing, powerful tools, and a reliable platform designed for
+      every investor.
+    </p>
+
+    <div class="features">
+      <article class="feature-card">
+        <h3>Trust</h3>
+        <p>Your investments are supported by a secure and reliable platform.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Confidence</h3>
+        <p>Make informed decisions with clear data and powerful tools.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Kite Connect</h3>
+        <p>Build applications and connect to the market using our APIs.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 4: unbeatable pricing -->
+  <section class="price-section">
+    <h2>Unbeatable pricing</h2>
+    <p>Simple, transparent pricing with no hidden charges.</p>
+
+    <div class="price-card">
+      <h3>Equity delivery</h3>
+      <strong>₹0</strong>
+      <p>Zero brokerage on equity delivery investments.</p>
+    </div>
+  </section>
+</main>
+ <footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img
+        src="https://zerodha.com/static/images/logo.svg"
+        alt="Zerodha Logo"
+      />
+      <p>© 2010 - 2026, Zerodha Broking Ltd.</p>
+      <p>All rights reserved.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Company</h3>
+      <a href="#">About</a>
+      <a href="#">Products</a>
+      <a href="#">Pricing</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <a href="#">Contact us</a>
+      <a href="#">Support portal</a>
+      <a href="#">Help center</a>
+      <a href="#">Downloads</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Account</h3>
+      <a href="#">Open account</a>
+      <a href="#">Login</a>
+      <a href="#">Console</a>
+      <a href="#">Kite</a>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
